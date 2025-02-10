@@ -13,6 +13,20 @@ foreach ($questionParts as $question) {
 
     $questions[] = trim($qText); //dodaje pytanie do tablicy
 }
+//funkcja usuwa numer pytania
+function removeQuestionNumber($question) {
+    //znajdujemy pierwszą kropkę w tekście
+    $dotPos = strpos($question, '.');
+
+    if ($dotPos !== false && $dotPos < 4) { 
+        return trim(substr($question, $dotPos + 1)); //tekst po kropce
+    }
+
+    return $question;
+}
+foreach ($questions as $q) {
+    echo removeQuestionNumber($q) . "<br>";
+}
 ?>
 
 <!DOCTYPE html>
