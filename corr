@@ -1,0 +1,8 @@
+
+                $correct = strpos(substr($pytanie, $odpStart, $odpEnd - $odpStart), 'class="odpgood"') !== false;
+
+                if ($correct) {
+                    echo "<li class='odpgood'>$odpText</li>";
+                } else {
+                    echo "<li>$odpText</li>";
+                }s
